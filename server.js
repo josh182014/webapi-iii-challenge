@@ -35,7 +35,7 @@ server.post('/post', validatePost, (req, res) => {
   })
   .catch(error => {
     console.log(error)
-    res.status(500).send("an error occored")
+    res.status(500).send(error)
   })
 })
 
@@ -86,7 +86,6 @@ function validateUser (req, res, next ) {
 }
 
 function validatePost (req, res, next ) {
-  console.log('validating post')
   function isEmpty(obj) {
     for(var key in obj) {
       if(obj.hasOwnProperty(key))
