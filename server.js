@@ -9,7 +9,7 @@ server.use(express.json())
 server.use(logger)
 
 server.get('/', (req, res) => {
-  res.send(`<h2>Let's write some middleware!</h2>`)
+  res.status(200).send(`<h2> Message: "Hello, world!</h2> <h3>Message Of The Day: ${process.env.MESSAGE}</h3>`)
 });
 
 
